@@ -5,10 +5,10 @@ public class Employee {
     private String firstName;
     private String secondName;
     private String lastName;
-    private String department;
+    private int department;
     private int salary;
 
-    public void setInfo(String firstName, String secondName, String lastName, String department, int salary) {          // сеттер информации о сотруднике
+    public void setInfo(String firstName, String secondName, String lastName, int department, int salary) {          // сеттер информации о сотруднике
         this.firstName = firstName;
         this.secondName = secondName;
         this.lastName = lastName;
@@ -32,7 +32,7 @@ public class Employee {
         this.lastName = lastName;
     }
 
-    public void setDepartment(String department) {        // сеттер отдела сотрудника
+    public void setDepartment(int department) {        // сеттер отдела сотрудника
         this.department = department;
     }
 
@@ -52,7 +52,7 @@ public class Employee {
         return this.lastName;
     }
 
-    public String getDepartment() {                      // геттер отдела сотрудника
+    public int getDepartment() {                      // геттер отдела сотрудника
         return this.department;
     }
 
@@ -62,6 +62,12 @@ public class Employee {
 
     @Override
     public String toString() {      // вывод всей информации о сотруднике
-        return id + ": " + lastName + ", " + firstName + " " + secondName + ", " + department + ", " + salary;
+        return id + ": " + lastName + " " + firstName + " " + secondName + "; Отдел №" + department + "; Зарплата: " + salary;
+    }
+
+    public String toString(int department) {      // вывод всей информации о сотруднике
+        return id + ": " + lastName + " " + firstName + " " + secondName + "; Зарплата: " + salary;
     }
 }
+
+
