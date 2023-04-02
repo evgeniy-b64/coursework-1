@@ -5,11 +5,7 @@ public class Menu {
     //int submenuItem;
 
     public static void viewMenu(int menuItem) {
-        System.out.println("=====================");
-        System.out.println("| Книга сотрудников |");
-        System.out.println("=====================");
-        System.out.println();
-        System.out.println("Выберите действие:");
+        System.out.println("\nВыберите действие:");
         switch (menuItem) {
             case 0:
                 System.out.println("1 - Получить список всех сотрудников");
@@ -17,7 +13,7 @@ public class Menu {
                 System.out.println("3 - Найти сотрудника с минимальной заплатой");
                 System.out.println("4 - Найти сотрудника с максимальной зарплатой");
                 System.out.println("5 - Подсчитать среднее значение зарплат");
-                //System.out.println("0 - Завершить работу");
+                System.out.println("0 - Завершить работу");
                 System.out.println();
                 break;
             case 1:
