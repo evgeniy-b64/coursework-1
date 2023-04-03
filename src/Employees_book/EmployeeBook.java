@@ -3,12 +3,11 @@ package Employees_book;
 public class EmployeeBook {
     private Employee[] storage;
     private static int idCounter = 0;
-    //private int id = 0;
-    //private static int employeesNumber = 0;
 
     void initialiseBook(int employeeNumber) {       //инициализация книги
         storage = new Employee[employeeNumber];     //объявляем переменную для массива, создаём массив размера employeeNumber
         for (int i = 0; i < employeeNumber; i++) {
+            //if (i == 3 ) continue;
             storage[i] = new Employee();            //создаём в цикле пустые объекты "сотрудников"
             idCounter++;
             storage[i].setID(idCounter);
@@ -43,7 +42,7 @@ public class EmployeeBook {
 
     public void printBook() {       // задание 1.1 печать всей книги сотрудиков
         for (Employee i : storage) {
-            System.out.println(i.toString());
+            if (i != null) System.out.println(i);
         }
     }
 
@@ -123,20 +122,49 @@ public class EmployeeBook {
         return (float) countSalaryExpenses(department) / countEmployees(department);
     }
 
-    public void raiseSalary (int department, int percent){           // индексация зарплаты сотрудников отдела на указанный процент
+    public void raiseSalary(int department, int percent) {           // индексация зарплаты сотрудников отдела на указанный процент
         for (Employee i : storage) {
             if (i.getDepartment() != department) continue;
-            if (percent > 0 ) i.setSalary(i.getSalary() + i.getSalary()* percent/100);
+            if (percent > 0) i.setSalary(i.getSalary() + i.getSalary() * percent / 100);
         }
     }
-    public void findAllBelow(int department, int value){            // Найти сотрудников отдела с зарплатой ниже указанной
+
+    public void findAllBelow(int department, int value) {            // Найти сотрудников отдела с зарплатой ниже указанной
         for (Employee i : storage) {
             if (i.getDepartment() == department && i.getSalary() < value) System.out.println(i);
         }
     }
-    public void findAllAbove(int department, int value){            // Найти сотрудников отдела с зарплатой выше указанной
+
+    public void findAllAbove(int department, int value) {            // Найти сотрудников отдела с зарплатой выше указанной
         for (Employee i : storage) {
             if (i.getDepartment() == department && i.getSalary() > value) System.out.println(i);
+        }
+    }
+
+    public void addEmployee(String fName, String sName, String lName, int department, int salary) {
+        boolean noVacancyFound = true;
+        for (int i = 0; i < countEmployees(); i++) {
+            if (storage[i] == null) {
+                storage[i] = new Employee();
+                idCounter++;
+                storage[i].setID(idCounter);
+                storage[i].setInfo(fName, sName, lName, department, salary);
+                System.out.printf("Добавлен сотрудник %s %s\n",fName, lName);
+                noVacancyFound = false;
+                break;
+            }
+        }
+        if (noVacancyFound) System.out.println("Невозможно добавить сотрудника. Вакансии отсутствуют");
+    }
+
+    public void deleteEmployee(int id){
+        for (int i = 0; i < countEmployees(); i++)
+         {
+            if (storage[i].id == id) {
+                System.out.printf("Сотрудник %s %s удалён \n",storage[i].getFirstName(), storage[i].getLastName());
+                storage[i] = null;
+                break;
+            }
         }
     }
 }

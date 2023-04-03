@@ -26,8 +26,10 @@ public class Main {
                         currentMenu = currentMenu * 10 + menuItem;
                         break;
                     case 13: // добавить сотрудника
+                        DPS.addEmployee("Александр", "Александрович", "Блок", 3, 53000);
                         break;
                     case 14: // удалить сотрудника
+                        DPS.deleteEmployee(4);
                         break;
                     case 15: // изменить данные сотрудника
                         break;

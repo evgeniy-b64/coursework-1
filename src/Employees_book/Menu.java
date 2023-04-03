@@ -1,6 +1,6 @@
 package Employees_book;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class Menu {
 
@@ -12,7 +12,7 @@ public class Menu {
                 System.out.println("2 - Сотрудники по отделам");
                 System.out.println("3 - Добавить сотрудника");
                 System.out.println("4 - Удалить сотрудника");
-                System.out.println("5 - Изменить данные сотрудника");
+                //System.out.println("5 - Изменить данные сотрудника");
                 System.out.println("0 - Завершить работу");
                 break;
             case 11:
@@ -42,11 +42,11 @@ public class Menu {
   /*  public static int selectAction(int menu, int keyPressed) {
         return menu * 10 + keyPressed;
     }*/
-    public static int readKey() {
+    /*public static int readKey() {
         int key = 0;
         Scanner keyScanner = new Scanner(System.in);
         if (keyScanner.hasNextInt()) key = keyScanner.nextInt();
         keyScanner.close();
         return key;
-    }
+    }*/
 }
