@@ -2,13 +2,15 @@ package Employees_book;
 
 public class Employee {
     int id;
+    private static int idCounter = 1;
     private String firstName;
     private String secondName;
     private String lastName;
     private int department;
     private int salary;
 
-    public void setInfo(String firstName, String secondName, String lastName, int department, int salary) {          // сеттер информации о сотруднике
+    public Employee(String firstName, String secondName, String lastName, int department, int salary) {          // конструктор класса Employee
+        this.id = idCounter++;
         this.firstName = firstName;
         this.secondName = secondName;
         this.lastName = lastName;
@@ -16,7 +18,7 @@ public class Employee {
         this.salary = salary;
     }
 
-    void setID(int id) {                // сеттер id сотрудника
+    public void setID(int id) {                // сеттер id сотрудника
         this.id = id;
     }
 

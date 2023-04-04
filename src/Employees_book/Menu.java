@@ -38,15 +38,4 @@ public class Menu {
                 break;
         }
     }
-
-  /*  public static int selectAction(int menu, int keyPressed) {
-        return menu * 10 + keyPressed;
-    }*/
-    /*public static int readKey() {
-        int key = 0;
-        Scanner keyScanner = new Scanner(System.in);
-        if (keyScanner.hasNextInt()) key = keyScanner.nextInt();
-        keyScanner.close();
-        return key;
-    }*/
 }
